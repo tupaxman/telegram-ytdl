@@ -93,8 +93,9 @@ bot.on("message:text").on("::url", async (ctx, next) => {
 			const additionalArgs = isTiktok ? tiktokArgs : []
 
 			const info = await getInfo(url.text, [
-				"-f",
-				"b",
+				"--add-metadata",
+				"--all-subs",
+				"--embed-subs",
 				"--no-playlist",
 				...additionalArgs,
 			])
